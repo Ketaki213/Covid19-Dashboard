@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+#btn{
+ background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  text-align: center;
+ text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+vertical-align: top;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/*table,td,th{
+  border: 1px solid black;
+}*/
+#myTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  display: inline-block;
+}
+#myTable td, #myTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#myTable tr:nth-child(even){background-color: #f2f2f2;}
+#myTable tr:hover {background-color: #ddd;}
+#myTable th {
+	border: 1px solid #ddd;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+<table id="myTable">
+	<tr>
+    <th>Country</th>
+    <th>New Confirmed</th>
+    <th>Total Confirmed</th>
+    <th>New Deaths</th>
+    <th>Total Deaths</th>
+    <th>New Recovered</th>
+    <th>Total Recovered</th>
+  </tr>
+</table>
+<input  id ="btn" type="button" value="States" onclick="openWin()">
+</body>
+<script type="text/javascript" src="mainjs.js"></script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#myTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+#myTable td, #myTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#myTable tr:nth-child(even){background-color: #f2f2f2;}
+#myTable tr:hover {background-color: #ddd;}
+#myTable th {
+	border: 1px solid #ddd;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+	</style>
+</head>
+<body>
+
+<table id="myTable">
+	<tr>
+    <th>District</th>
+    <th>Active</th>
+    <th>Confirmed</th>
+    <th>Deaths</th>
+    <th>Recovered</th>
+  </tr>
+</table>
+
+
+</body>
+<script type="text/javascript" src="districtdata.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#myTable').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
+	
+</script>
+</html>
