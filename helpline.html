@@ -38,7 +38,6 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
@@ -46,11 +45,13 @@
 </head>
 <body>
 <h1>Helpline</h1>
-<div class="dropdown">
-  <select class="dropbtn">Dropdown</select>
-  <div class="dropdown-content">
-  </div>
-</div>
+<!-- <div class="dropdown"> -->
+  <select id="dropbtn" onchange="getHelpline(this)" >
+  </select>
+
+  <h2 id="number"></h2>
+  <!-- </div> -->
+<!-- </div> -->
 </body>
 <script type="text/javascript" src="helplines.js"></script>
 </html>

@@ -40,6 +40,40 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   height: 100px;
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+#btn3{
+ background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+ text-decoration: none;
+  font-size: 16px;
+  top: 150px;
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  display:block;
+  margin-top: 20px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#btn4{
+ background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 50px;
+  text-align: center;
+ text-decoration: none;
+  font-size: 16px;
+  top: 150px;
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  display:block;
+  margin-top: 20px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 #myTable {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -70,6 +104,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 <h5 id="total"></h5>
 	<h1>States</h1>
+  <div>
 	<table id="myTable">
 	<tr>
     <th>State</th>
@@ -81,8 +116,11 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   </tr>
 </table>
 <div id ='buttons'>
-<input  id ="btn" type="button" value="Analysis" onclick="openWin()">
-<input  id ="btn2" type="button" value="Helpline" onclick="openWin1()">
+  <input  id ="btn" type="button" value="Analysis" onclick="openWin()">
+  <input  id ="btn2" type="button" value="Helpline" onclick="openWin1()">
+  <input  id ="btn3" type="button" value="Updates" onclick="openWin2()">
+  <input  id ="btn4" type="button" value="Essentials" onclick="openWin3()">
+</div>
 </div>
 </body>
 <script type="text/javascript" src="statesdata.js"></script>
@@ -93,6 +131,16 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 	function openWin1() {
   window.open("helpline.html","_self");
+
+}
+
+  function openWin2() {
+  window.open("updates.html","_self");
+
+}
+
+ function openWin3() {
+  window.open("essentials.html","_self");
 
 }
 </script>
