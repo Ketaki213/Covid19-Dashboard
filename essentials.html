@@ -7,14 +7,29 @@
 		{
 			display: block;
 		}
+		#searchbtn
+		{
+			vertical-align: top;
+			height: 20px;
+			width: 100px;
+		}
 	</style>
 </head>
 <body>
 <h1>Essentials</h1>
 <div id="dropdowns">
-	<select id="states"></select>
-	<select id="districts"></select>
-	<select id="utilities"></select>
+	<select id="states">
+		<option>Select a State</option>
+	</select>
+	<select id="districts">
+		<option>Select a City</option>
+	</select>
+	<select id="utilities">
+		<option>Select the Essential</option>
+	</select>
+	<input id="searchbtn" type="button" name="Search" value="Search">
 </div>
+<div id="results"></div>
 </body>
+<script type="text/javascript" src="essentials.js"></script>
 </html>
