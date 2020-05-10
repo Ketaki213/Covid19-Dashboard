@@ -8,6 +8,24 @@
 			display: inline-block;
 			vertical-align: top;
 		}
+    .navigation ul {
+  list-style: none;
+  margin: 0 auto;
+    padding: 0;
+}
+
+.navigation li{
+  display: inline-block;
+  margin: 1em;
+}
+
+.navigation a{
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5em;
+  color: #000000;
+}
 		#btn{
  background-color: #4CAF50; /* Green */
   border: none;
@@ -101,7 +119,16 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
       <script src = "https://code.highcharts.com/highcharts.js"></script> 
 </head>
 <body>
-
+  <header>
+   <nav class="navbar navbar-dark bg-dark" style="background-color:#5E9CD3; color:#5E9CD3">
+  <a class="nav-link" style="color:white; text-align:left" href="main.html">Home</a>
+  <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
+  <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
+  <a class="nav-link" style="color:white; text-align:left" href="updates.html">Updates</a>
+  <a class="nav-link" style="color:white; text-align:left" href="essentails.html">Essentials</a>
+  <a class="nav-link" style="color:white; text-align:left" href="aboutus.html">About us</a>
+</nav>
+  </header>
 <h5 id="total"></h5>
 	<h1>States</h1>
   <div>
@@ -115,17 +142,20 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     <th>Total Confirmed</th>
   </tr>
 </table>
-<div id ='buttons'>
+<!-- <div id ='buttons'>
   <input  id ="btn" type="button" value="Analysis" onclick="openWin()">
   <input  id ="btn2" type="button" value="Helpline" onclick="openWin1()">
   <input  id ="btn3" type="button" value="Updates" onclick="openWin2()">
   <input  id ="btn4" type="button" value="Essentials" onclick="openWin3()">
-</div>
+</div> -->
 </div>
 </body>
 <script type="text/javascript" src="statesdata.js"></script>
 <script type="text/javascript">
-	function openWin() {
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+/*	function openWin() {
   window.open("graphs.html","_self");
 
 }
@@ -142,7 +172,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
  function openWin3() {
   window.open("essentials.html","_self");
 
-}
+}*/
 </script>
 </html>
 

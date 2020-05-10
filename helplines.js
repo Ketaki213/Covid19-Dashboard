@@ -1,6 +1,3 @@
-
-
-
 var xmlhttp = new XMLHttpRequest();
 var url = "https://api.rootnet.in/covid19-in/contacts";
 
@@ -10,33 +7,23 @@ xmlhttp.onreadystatechange = function() {
         myFunction(myArr);
     }
 };
+
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
-var map = new Map();
-function myFunction(myArr)
-{
-	var contacts = myArr.data.contacts.regional;
-	//console.log(contacts);
-	var daySelect = document.getElementById("dropbtn");
-	for(var i=0; i<contacts.length;i++)
-	{
-		var option = document.createElement("option");
-		console.log(contacts[i].loc);
-        option.text = contacts[i].loc;
-        daySelect.add(option);
-        //console.log(state);
-        map.set(contacts[i].loc,contacts[i].number);
-	}
+function myFunction(myArr){
+	console.log("Hello ",myArr);
+	var columnDefs = [
+	  {headerName: "State", field: "loc", minWidth:300},
+	  {headerName: "Number", field: "number",minWidth:300}
+	];
+
+	var rowData = myArr.data.contacts.regional;
+	var gridOptions = {
+	  columnDefs: columnDefs,
+	  rowData: rowData,
+	  pagination: true,
+	  paginationPageSize: 15
+	};
+	var gridDiv = document.querySelector('#myGrid');
+    new agGrid.Grid(gridDiv, gridOptions);
 }
-
-function getHelpline(sel)
-{
-	console.log(sel.options[sel.selectedIndex].text);
-    state = sel.options[sel.selectedIndex].text;
-    document.getElementById("number").innerHTML = map.get(state);
-}
-	//console.log(daySelect.options[daySelect.selectedIndex].text);
-
-
-
-
