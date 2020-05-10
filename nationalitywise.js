@@ -5,7 +5,6 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr1 = JSON.parse(this.responseText);
         ageData(myArr1);
-     // getAll(myArr1);
     }
 }
 
@@ -15,7 +14,6 @@ function ageData(myArr1)
 	var male = 0;
 	var female = 0;
 	var raw_data = myArr1.raw_data;
-	console.log(raw_data);
 	var map = new Map();
 	var nations = [];
 	var counts = [];
@@ -40,7 +38,4 @@ function ageData(myArr1)
 	{
       counts.push(map.get(ele));
     }
-	console.log(map);
-	console.log(nations);
-	console.log(counts);
 }

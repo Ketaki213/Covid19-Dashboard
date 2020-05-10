@@ -3,9 +3,8 @@ var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        var myArr1 = JSON.parse(this.responseText);
-        ageData(myArr1);
-     // getAll(myArr1);
+      var myArr1 = JSON.parse(this.responseText);
+      ageData(myArr1);
     }
 }
 
@@ -27,8 +26,6 @@ function ageData(myArr1)
 			male++;
 		}
 	}
-	//console.log(female+" "+male);
-	// Radialize the colors
 Highcharts.setOptions({
   colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
     return {

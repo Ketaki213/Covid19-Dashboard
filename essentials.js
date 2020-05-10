@@ -1,7 +1,6 @@
 var xmlhttp = new XMLHttpRequest();
 var url = "https://api.covid19india.org/resources/resources.json";
 var states_districts = new Map();
-//var utility = new Set();
 var ans = new Map();
 var opts = new Map();
 xmlhttp.onreadystatechange = function() {
@@ -16,8 +15,7 @@ xmlhttp.send();
 var stateSelect = document.getElementById("states");
 var districtSelect = document.getElementById("districts");
 var utilitySelect = document.getElementById("utilities");
-function myFunction(myArr)
-{
+function myFunction(myArr){
 	var utilities = myArr.resources;
     var element = document.getElementById("updates");
     for(var i=0; i<utilities.length;i++)
@@ -48,9 +46,6 @@ function myFunction(myArr)
            orgs.add(d);
            ans.set(utilities[i].state+" "+utilities[i].city+" "+utilities[i].category,orgs);
        }
-
-      // console.log(ans);
-       
        if(opts.has(utilities[i].state+" "+utilities[i].city))
        {
          opts.get(utilities[i].state+" "+utilities[i].city).add(utilities[i].category); 
@@ -64,12 +59,9 @@ function myFunction(myArr)
 
     }
 
-  //  console.log(opts);
-
     stateSelect.addEventListener("change", function() {
            districtSelect.options.length = 1;
            var dists = states_districts.get(stateSelect.value);
-          // console.log(dists);
              for(var d of dists)
              {
                var option = document.createElement("option"); 
@@ -79,19 +71,16 @@ function myFunction(myArr)
              
      });
 
-
     districtSelect.addEventListener("change", function() {
            utilitySelect.options.length = 1;
            console.log(stateSelect.value+" "+districtSelect.value);
            var ut_opts = opts.get(stateSelect.value+" "+districtSelect.value);
-           //console.log(ut_opts);
              for(var d of ut_opts)
              {
                var option = document.createElement("option"); 
                option.text = d;
                utilitySelect.add(option);
              }
-             
      });
     
     document.getElementById("searchbtn").addEventListener("click", function(){
@@ -107,9 +96,5 @@ function myFunction(myArr)
         p.innerHTML = '<h3>'+a[0]+'          '+a[1]+'</h3>';
         result.appendChild(p);
      }
-});
-   
-    
+});    
 }
-
-
