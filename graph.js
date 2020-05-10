@@ -9,7 +9,6 @@ xmlhttp.onreadystatechange = function() {
     }
 }
 
-
 xmlhttp.open("GET", url2, true);
 xmlhttp.send();
 
@@ -20,54 +19,53 @@ function getAll(myArr1)
   total = summary2.total;
   discharged = summary2.discharged;
   console.log(this.total);
-// document.getElementById("total").innerHTML = total;
-Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Corona Caes Analysis in India'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: false
-            },
-            showInLegend: true
-        }
-    },
-    series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Confirmed Indian Cases',
-            y: summary2.confirmedCasesIndian
-        }, {
-            name: 'Discharged',
-            y: discharged
-        },{
-          name : 'Confirmed Foreign Cases',
-          y:summary2.confirmedCasesForeign
-        },
-        {
-          name:'Deaths',
-          y:summary2.deaths
-        }]
-    }]
-});
+  Highcharts.chart('container', {
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+      },
+      title: {
+          text: 'Corona Caes Analysis in India'
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      accessibility: {
+          point: {
+              valueSuffix: '%'
+          }
+      },
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                  enabled: false
+              },
+              showInLegend: true
+          }
+      },
+      series: [{
+          name: 'Brands',
+          colorByPoint: true,
+          data: [{
+              name: 'Confirmed Indian Cases',
+              y: summary2.confirmedCasesIndian
+          }, {
+              name: 'Discharged',
+              y: discharged
+          },{
+            name : 'Confirmed Foreign Cases',
+            y:summary2.confirmedCasesForeign
+          },
+          {
+            name:'Deaths',
+            y:summary2.deaths
+          }]
+      }]
+  });
 }
 
 
@@ -75,7 +73,6 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr1 = JSON.parse(this.responseText);
-        //console.log(myArr1);
         getTimeWiseData(myArr1);
     }
 
@@ -88,18 +85,10 @@ var totalcases = [];
 function getTimeWiseData(myArr1)
 {
   var data = myArr1.data;
-  //console.log(data);
   for(var i=0; i<data.length;i++)
   {
       dates.push(data[i].day);
-     // console.log(data[i].day);
       var more = data[i].summary;
-     // console.log(more.total);
       totalcases.push(more.total);
   }
-
-
-
-  console.log(dates);
-  console.log(totalcases);
 }
