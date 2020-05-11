@@ -1,4 +1,27 @@
-Highcharts.chart('container1', {
+var url = "https://api.rootnet.in/covid19-in/stats/history";
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr1 = JSON.parse(this.responseText);
+        getAll(myArr1);
+    }
+}
+
+function getAll(myArr1)
+{
+    var total_confirmed = [];
+   var daily = myArr1.data;
+  for(var i=0;i<daily.length;i++)
+  {
+    var total1 = daily[i].summary.total;
+    total_confirmed.push(total1);
+  }
+
+   console.log(total_confirmed);
+
+
+Highcharts.chart('container', {
     chart: {
         type: 'spline',
         scrollablePlotArea: {
@@ -7,7 +30,7 @@ Highcharts.chart('container1', {
         }
     },
     title: {
-        text: 'Number of Corona Cases',
+        text: 'Wind speed during two days',
         align: 'left'
     },
     subtitle: {
@@ -113,18 +136,20 @@ Highcharts.chart('container1', {
             marker: {
                 enabled: false
             },
-            pointInterval: 17280000, // one hour
+            pointInterval: 7200000, // one hour
             pointStart: Date.UTC(2020, 2, 10, 0, 0, 0)
         }
     },
     series: [{
         name: 'Hestavollane',
-        data: totalcases
-
-    }],
+        data: total_confirmed
+   }],
     navigation: {
         menuItemStyle: {
             fontSize: '10px'
         }
     }
 });
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();

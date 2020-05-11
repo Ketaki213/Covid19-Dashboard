@@ -87,15 +87,50 @@ function myFunction(myArr)
     
     document.getElementById("searchbtn").addEventListener("click", function(){
       var search_res = ans.get(stateSelect.value+" "+districtSelect.value+" "+utilitySelect.value);
-      var result = document.getElementById("results");
-      result.innerHTML = "";
-      //console.log(search_res);
+     var table = document.getElementById("myTable");
+      table.innerHTML = "";
+      if(search_res)
+      {
+        var header = table.createTHead();
+        header.innerHTML = "<tr><th>Organisation</th><th>Contact Number</th></tr>" 
+         var count = 1;
       for(var ele of search_res)
       { 
+        var row = table.insertRow(count);
+        count++;
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
         var a = ele;
-        var p = document.createElement("p");
-        p.innerHTML = '<h3>'+a[0]+'          '+a[1]+'</h3>';
-        result.appendChild(p);
-     }
+        cell1.innerHTML = a[0];
+        cell2.innerHTML = a[1]; 
+      }
+      }
+      else
+      {
+        var message = "";
+        if(stateSelect.value=="Select a State")
+          message+=" State";
+        if(districtSelect.value=="Select a City")
+        {
+          if(message=="")
+          message+="City";
+        else
+          message+=" ,City";
+        }
+        if(utilitySelect.value=="Select the Essential")
+        {
+          if(message=="")
+            message+="Essential";
+          else
+          message+=" ,Essential";
+        }
+        document.getElementById("message").innerHTML = "Please select valid "+message+"*";
+      }
+      
 });    
 }
+
+  
+  
+  
+  

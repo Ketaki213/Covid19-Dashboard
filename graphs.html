@@ -29,21 +29,40 @@
   padding: 0.5em;
   color: #000000;
 }
+.footer{
+  position: fixed;
+  background:#343A40;
+  padding: 1% 1%;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  color: #ffffff;
+  text-align: center;
+  /*overflow: auto;*/
+  bottom: 0;
+}
 		
 	</style>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
+  <a class="nav-link"><img src="logo.jpeg" alt="logo" style="width: 120px;height: 40px;" ></a>
   <a class="nav-link" style="color:white; text-align:left" href="main.html">Home</a>
   <a class="nav-link" style="color:white; text-align:left" href="states.html">Statewise</a>
   <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
   <a class="nav-link" style="color:white; text-align:left" href="updates.html">Updates</a>
   <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentails</a>
-  <a class="nav-link" style="color:white; text-align:left" href="aboutus.html">About us</a>
 </nav>
-<h1>Graphs</h1>
+<h1 style="color:#343A40; margin-left:40%;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;"><b>Graphs</b></h1>
 <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
 <div id="age_container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
+<div id="total_container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
+<footer class="footer">
+    <p></p>
+    <h5>Created by Ketaki Butte and Kaustubh Butte</h5>
+    <a href="https://www.linkedin.com/in/ketaki-butte-70b676128/" target="_blank"><img src="linkedin.png" alt="logo" style="width: 40px;height: 40px;" ></a>
+  </div>
+</footer>
 </body>
 <script type="text/javascript" src="graph.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -51,4 +70,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src = "https://code.highcharts.com/highcharts.js"></script> 
 <script type="text/javascript" src="agepie.js"></script>
+<script type="text/javascript" src="timseries.js"></script>
 </html>

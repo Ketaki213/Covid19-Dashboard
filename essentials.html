@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
 	<title></title>
@@ -10,8 +10,11 @@
 		#searchbtn
 		{
 			vertical-align: top;
-			height: 20px;
+			height: 30px;
 			width: 100px;
+			border-radius: 2%;
+			border:none;
+			background-color: #5E9CD3;
 		}
 		.navigation ul {
 	list-style: none;
@@ -31,20 +34,76 @@
   padding: 0.5em;
   color: #000000;
 }
+#myTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 1%;
+}
+#myTable td, #myTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#myTable tr:nth-child(even){background-color: #f2f2f2;}
+#myTable tr:hover {background-color: #ddd;}
+#myTable th {
+	border: 1px solid #ddd;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5E9CD3;
+  color: white;
+}
+#states
+{
+	margin-left: 5%;
+}
+#districts
+{
+	margin-left: 5%;
+}
+#utilities
+{
+	margin-left: 5%;
+}
+#searchbtn
+{
+	margin-left: 5%;
+	/*display: inline-block;*/
+}
+#message
+{
+	vertical-align: top;
+	margin-left: 5%;
+	color: red;
+}
+.footer{
+  position: fixed;
+  background:#343A40;
+  padding: 1% 1%;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  color: #ffffff;
+  text-align: center;
+  /*overflow: auto;*/
+}
 </style>
 </head>
 <body>
 	 <header>
 <nav class="navbar navbar-dark bg-dark">
+  <a class="nav-link"><img src="logo.jpeg" alt="logo" style="width: 120px;height: 40px;" ></a>
   <a class="nav-link" style="color:white; text-align:left" href="main.html">Home</a>
   <a class="nav-link" style="color:white; text-align:left" href="states.html">Statewise</a>
   <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
   <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
   <a class="nav-link" style="color:white; text-align:left" href="updates.html">Updates</a>
-  <a class="nav-link" style="color:white; text-align:left" href="aboutus.html">About us</a>
 </nav>
   </header>
-<h1>Essentials</h1>
+<h1 style="color:#343A40; margin-left:40%;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;"><b>Essentials</b></h1>
 <div id="dropdowns">
 	<select id="states">
 		<option>Select a State</option>
@@ -56,8 +115,16 @@
 		<option>Select the Essential</option>
 	</select>
 	<input id="searchbtn" type="button" name="Search" value="Search">
+	<p type="text" id="message"></p>
 </div>
-<div id="results"></div>
+
+<table id="myTable"></table>
+<footer class="footer">
+    <p></p>
+    <h5>Created by Ketaki Butte and Kaustubh Butte</h5>
+    <a href="https://www.linkedin.com/in/ketaki-butte-70b676128/" target="_blank"><img src="linkedin.png" alt="logo" style="width: 40px;height: 40px;margin-top:10px;" ></a>
+  </div>
+</footer>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">

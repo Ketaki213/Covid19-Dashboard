@@ -45,7 +45,17 @@
   background-color: #5E9CD3;
   color: white;
 }
-
+.footer{
+  /*position: fixed;*/
+  background:#343A40;
+  padding: 1% 1%;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  color: #ffffff;
+  text-align: center;
+  overflow: auto;
+}
 	</style>
    <link
     rel="stylesheet"
@@ -58,16 +68,16 @@
 <body>
   <header>
    <nav class="navbar navbar-dark bg-dark" style="background-color:#5E9CD3; color:#5E9CD3">
+  <a class="nav-link"><img src="logo.jpeg" alt="logo" style="width: 120px;height: 40px;" ></a>
   <a class="nav-link" style="color:white; text-align:left" href="main.html">Home</a>
   <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
   <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
   <a class="nav-link" style="color:white; text-align:left" href="updates.html">Updates</a>
   <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentials</a>
-  <a class="nav-link" style="color:white; text-align:left" href="aboutus.html">About us</a>
 </nav>
   </header>
 <h5 id="total"></h5>
-	<h1>States</h1>
+	<h1 style="color:#343A40; margin-left:40%;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; "><b>States Data</b></h1>
   <div>
 	<table id="myTable" >
 	<tr>
@@ -80,6 +90,12 @@
   </tr>
 </table>
 </div>
+<footer class="footer">
+    <p></p>
+    <h5>Created by Ketaki Butte and Kaustubh Butte</h5>
+    <a href="https://www.linkedin.com/in/ketaki-butte-70b676128/" target="_blank"><img src="linkedin.png" alt="logo" style="width: 40px;height: 40px;margin-top:10px;" ></a>
+  </div>
+</footer>
 </body>
 <script type="text/javascript" src="statesdata.js"></script>
 <script type="text/javascript"></script>
