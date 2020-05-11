@@ -12,7 +12,7 @@ function getAll3(myArr1)
 {
     console.log(myArr1)
     let state_histories_map = new Map();
-    let state_history = myArr1.data.statewise;
+    let state_history = myArr1.data.history;
     console.log(state_history)
     for(let i=0;i<state_history.length;i++){
         if(state_histories_map.has(state_history[i].state))
