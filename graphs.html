@@ -3,14 +3,7 @@
 <head>
 	<title></title>
 	<style type="text/css">
-		#container{
-			display: inline-block;
-		}
-		#age_container
-		{
-			display: inline-block;
-			vertical-align: top;
-		}
+		
 		.navigation ul {
     list-style: none;
     margin: 0 auto;
@@ -29,8 +22,11 @@
   padding: 0.5em;
   color: #000000;
 }
+.highcharts-credits {
+display: none !important;
+}
 .footer{
-  position: fixed;
+  /*position: fixed;*/
   background:#343A40;
   padding: 1% 1%;
   bottom: 0;
@@ -41,8 +37,30 @@
   /*overflow: auto;*/
   bottom: 0;
 }
-		
-	</style>
+#first_two
+{
+  /*display: block;*/
+}	
+#total_container
+{
+  /*vertical-align: top;*/
+}
+#second_two
+{
+  display: block;
+  margin: auto;
+}
+#container{
+      display: inline-block;
+      margin-right: 0px;
+    }
+    #age_container
+    {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 40px;
+    }
+</style>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
@@ -54,9 +72,15 @@
   <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentails</a>
 </nav>
 <h1 style="color:#343A40; margin-left:40%;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;"><b>Graphs</b></h1>
-<div id = "container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
-<div id="age_container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
-<div id="total_container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
+<div id="first_two">
+<div id = "total_container" style="width: 90%;margin: auto;height: 500px;"></div>
+</div>
+<div id="testing" style="width: 90%;margin: auto;height: 500px;"></div>
+<div id="state_container" style="width: 90%;margin: auto;height: 500px;"></div>
+<div id="second_two" style="width: 100%">
+  <div id="age_container" style="width: 450px;height: 450px;"></div>
+  <div id="container" style="width: 450px;height: 450px;margin-left: 30%"></div>
+</div>
 <footer class="footer">
     <p></p>
     <h5>Created by Ketaki Butte and Kaustubh Butte</h5>
@@ -64,11 +88,13 @@
   </div>
 </footer>
 </body>
-<script type="text/javascript" src="graph.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src = "https://code.highcharts.com/highcharts.js"></script> 
 <script type="text/javascript" src="agepie.js"></script>
 <script type="text/javascript" src="timseries.js"></script>
+<script type="text/javascript" src="graph.js"></script>
+<script type="text/javascript" src="testing.js"></script>
+<script type="text/javascript" src="statehistory.js"></script>
 </html>

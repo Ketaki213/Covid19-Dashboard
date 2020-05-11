@@ -1,31 +1,31 @@
-let url3 = "https://api.rootnet.in/covid19-in/stats/history";
-let xmlhttp3 = new XMLHttpRequest();
+let url6 = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history";
+let xmlhttp4 = new XMLHttpRequest();
 
-xmlhttp3.onreadystatechange = function() {
+xmlhttp4.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         let myArr1 = JSON.parse(this.responseText);
-        getAll1(myArr1);
+        getAll3(myArr1);
     }
 }
 
-function getAll1(myArr1)
+function getAll3(myArr1)
 {
-    let total_confirmed = [];
-    let discharged = [];
-    let deaths = [];
-    let daily = myArr1.data;
-    for(let i=0;i<daily.length;i++)
-    {
-      let total1 = daily[i].summary.total;
-      let discharged1 = daily[i].summary.discharged;
-      let deaths1 = daily[i].summary.deaths;
-      total_confirmed.push(total1);
-      discharged.push(discharged1);
-      deaths.push(deaths1);
+    console.log(myArr1)
+    let state_histories_map = new Map();
+    let state_history = myArr1.data.statewise;
+    console.log(state_history)
+    for(let i=0;i<state_history.length;i++){
+        if(state_histories_map.has(state_history[i].state))
+            state_histories_map.get(state_history[i].state).push(state_history[i].confirmed);
+        else{
+            let curr_state = [];
+            curr_state.push(state_history[i].confirmed);
+            state_histories_map.set(state_history[i].state ,curr_state);
+        }
     }
-
-
-Highcharts.chart('total_container', {
+    console.log(state_histories_map.keys())
+/*
+Highcharts.chart('state_container', {
     chart: {
         type: 'spline',
         scrollablePlotArea: {
@@ -34,7 +34,7 @@ Highcharts.chart('total_container', {
         }
     },
     title: {
-        text: 'Corona Cases in India to date',
+        text: 'Corona Cases in States to date',
         align: 'left'
     },
     xAxis: {
@@ -45,7 +45,7 @@ Highcharts.chart('total_container', {
     },
     yAxis: {
         title: {
-            text: 'Total Corona Cases'
+            text: 'Total Corona Cases in States'
         },
         minorGridLineWidth: 0,
         gridLineWidth: 0,
@@ -67,11 +67,11 @@ Highcharts.chart('total_container', {
                 enabled: false
             },
             pointInterval: 7200000*12, // one hour
-            pointStart: Date.UTC(2020, 2, 10, 0, 0, 0)
+            pointStart: Date.UTC(2020, 2, 14, 0, 0, 0)
         }
     },
     series: [{
-        name: 'Total Cases',
+        name: 'Total Confirmed Cases',
         data: total_confirmed
    },
    {
@@ -87,7 +87,7 @@ Highcharts.chart('total_container', {
             fontSize: '10px'
         }
     }
-});
+});*/
 }
-xmlhttp3.open("GET", url3, true);
-xmlhttp3.send();
+xmlhttp4.open("GET", url6, true);
+xmlhttp4.send();

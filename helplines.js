@@ -20,9 +20,7 @@ function myFunction(myArr){
 	var rowData = myArr.data.contacts.regional;
 	var gridOptions = {
 	  columnDefs: columnDefs,
-	  rowData: rowData,
-	  pagination: true,
-	  paginationPageSize: 15,
+	  rowData: rowData
 };
       gridOptions.rowHeight = 40;
 	var gridDiv = document.querySelector('#myGrid');

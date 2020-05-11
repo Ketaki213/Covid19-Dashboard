@@ -1,24 +1,23 @@
-var url = "https://api.rootnet.in/covid19-in/stats/history";
-var url2 = "https://api.rootnet.in/covid19-in/stats/latest";
-var xmlhttp = new XMLHttpRequest();
+// let url1 = "https://api.rootnet.in/covid19-in/stats/history";
+let url1 = "https://api.rootnet.in/covid19-in/stats/latest";
+let xmlhttp1 = new XMLHttpRequest();
 
-xmlhttp.onreadystatechange = function() {
+xmlhttp1.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        var myArr1 = JSON.parse(this.responseText);
+        let myArr1 = JSON.parse(this.responseText);
         getAll(myArr1);
     }
 }
 
-xmlhttp.open("GET", url2, true);
-xmlhttp.send();
+xmlhttp1.open("GET", url1, true);
+xmlhttp1.send();
 
 function getAll(myArr1)
 {
-  var india = myArr1.data;
-  var summary2 = india.summary;
+  let india = myArr1.data;
+  let summary2 = india.summary;
   total = summary2.total;
   discharged = summary2.discharged;
-  console.log(this.total);
   Highcharts.chart('container', {
       chart: {
           plotBackgroundColor: null,
@@ -27,7 +26,7 @@ function getAll(myArr1)
           type: 'pie'
       },
       title: {
-          text: 'Corona Caes Analysis in India'
+          text: 'Corona Cases Analysis in India'
       },
       tooltip: {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -68,27 +67,3 @@ function getAll(myArr1)
   });
 }
 
-
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myArr1 = JSON.parse(this.responseText);
-        getTimeWiseData(myArr1);
-    }
-
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-var dates = [];
-var totalcases = [];
-
-function getTimeWiseData(myArr1)
-{
-  var data = myArr1.data;
-  for(var i=0; i<data.length;i++)
-  {
-      dates.push(data[i].day);
-      var more = data[i].summary;
-      totalcases.push(more.total);
-  }
-}
