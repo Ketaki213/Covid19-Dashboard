@@ -7,7 +7,7 @@
 .navigation ul {
   list-style: none;
   margin: 0 auto;
-    padding: 0;
+  padding: 0;
 }
 
 .navigation li{
@@ -22,29 +22,40 @@
   padding: 0.5em;
   color: #000000;
 }
+
+.navbar-custom { 
+  background-color: #5E9CD3; 
+} 
+.card-body:hover
+{
+  animate__animated: "animate__bounce";
+}
 </style>
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
 <body>
 
  <header>
-<nav class="navbar navbar-dark bg-dark">
-  <a class="nav-link" style="color:white; text-align:left" href="main.html">Home</a>
-  <a class="nav-link" style="color:white; text-align:left" href="states.html">Statewise</a>
-  <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
-  <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
-  <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentials</a>
-  <a class="nav-link" style="color:white; text-align:left" href="aboutus.html">About us</a>
-</nav>
+  <nav  class="navbar navbar-custom" class="navbar navbar-dark bg-dark">
+    <a class="nav-link" style="color:white; text-align:left" href="main.html">Home</a>
+    <a class="nav-link" style="color:white; text-align:left" href="states.html">Statewise</a>
+    <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
+    <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
+    <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentials</a>
+    <a class="nav-link" style="color:white; text-align:left" href="aboutus.html">About us</a>
+  </nav>
 </header>
-
-<h1>Updates</h1>
+  <h1>Updates</h1>
+  <div id="updates"></div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="updates.js"></script>
 
-<div id="updates"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script type="text/javascript" src="updates.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
 </html>

@@ -14,7 +14,6 @@ xmlhttp.send();
 var curr_states = [];
 function stateData(myArr1)
 {
-	var out = "";
   var whole =  myArr1.data;
   var states = whole.regional;
   var count = 1;

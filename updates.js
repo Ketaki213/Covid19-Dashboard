@@ -13,12 +13,12 @@ xmlhttp.send();
 function myFunction(myArr)
 {
 	var notifications = myArr.data.notifications;
-    console.log(notifications.length);
     var element = document.getElementById("updates");
-    for(var i=0; i<notifications.length;i++)
+    for(let i=0; i<notifications.length;i++)
     {
         var link_rf = document.createElement("p");
-        link_rf.innerHTML = '<a href="'+notifications[i].link+'">'+notifications[i].title+'</a><br>';
+        link_rf.innerHTML = '<div class="animate__animated animate__fadeInDown" class="card-body" style="width:95%; border-radius:10px; background-color:#F2F2F2; margin-left:10px"><p class="card-title">'+notifications[i].title+'</p><a href="'
+        +notifications[i].link +'" target="_blank" class="card-link">Open Link</a></div>';
         element.appendChild(link_rf);
     }
 }

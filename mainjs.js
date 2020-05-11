@@ -11,12 +11,20 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
-function openWin() {
-  window.open("states.html","_self");
-}
 
-function myFunction(arr) {
-	var countries = arr.Countries;
+function myFunction(myArr) {
+  // var columnDefs = [
+  //   {headerName: "Country", field: "Country", minWidth:300},
+  //   {headerName: "Total Confirmed", field: "TotalConfirmed",minWidth:300},
+  //   {headerName: "New Deaths", field: "NewDeaths",minWidth:300},
+  //   {headerName: "Total Deaths", field: "TotalDeaths",minWidth:300},
+  //   {headerName: "New Recovered", field: "NewRecovered",minWidth:300},
+  //   {headerName: "Total Recovered", field: "TotalRecovered",minWidth:300}
+  // ];
+
+  // var rowData = myArr.Countries;
+  // console.log(rowData);
+	var countries = myArr.Countries;
 	var table = document.getElementById("myTable");
     var out = "";
     var i;
@@ -37,5 +45,13 @@ function myFunction(arr) {
       cell5.innerHTML = countries[i].NewRecovered;
       cell6.innerHTML = countries[i].TotalRecovered;
     }
+ // var gridOptions = {
+ //    columnDefs: columnDefs,
+ //    rowData: rowData,
+ //    pagination: true,
+ //    paginationPageSize: 15
+ //  };
+ //  var gridDiv = document.querySelector('#myGrid');
+ //  new agGrid.Grid(gridDiv, gridOptions);
 }
 

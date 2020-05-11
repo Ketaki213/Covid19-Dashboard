@@ -3,10 +3,7 @@
 <head>
 	<title></title>
 	<style type="text/css">
-#buttons{
-	display: inline-block;
-	vertical-align: top;
-}
+
 .navigation ul {
   list-style: none;
   margin: 0 auto;
@@ -25,76 +22,14 @@
   padding: 0.5em;
   color: #000000;
 }
-#btn{
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 50px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-#btn2{
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 50px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  position: relative;
-  top: 150px;
-  cursor: pointer;
-  position: relative;
-  width: 200px;
-  height: 100px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-#btn3{
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 50px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  top: 150px;
-  cursor: pointer;
-  position: relative;
-  width: 200px;
-  height: 100px;
-  display:block;
-  margin-top: 20px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-#btn4{
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 50px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  top: 150px;
-  cursor: pointer;
-  position: relative;
-  width: 200px;
-  height: 100px;
-  display:block;
-  margin-top: 20px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
+
 #myTable {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 60%;
   cursor: pointer;
-  display: inline-block;
+  margin: auto;
+  margin-top: 1%;
 }
 #myTable td, #myTable th {
   border: 1px solid #ddd;
@@ -107,10 +42,15 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: #5E9CD3;
   color: white;
 }
+
 	</style>
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
       </script>
       <script src = "https://code.highcharts.com/highcharts.js"></script> 
@@ -122,16 +62,16 @@
   <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
   <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
   <a class="nav-link" style="color:white; text-align:left" href="updates.html">Updates</a>
-  <a class="nav-link" style="color:white; text-align:left" href="essentails.html">Essentials</a>
+  <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentials</a>
   <a class="nav-link" style="color:white; text-align:left" href="aboutus.html">About us</a>
 </nav>
   </header>
 <h5 id="total"></h5>
 	<h1>States</h1>
   <div>
-	<table id="myTable">
+	<table id="myTable" >
 	<tr>
-    <th>State</th>
+    <th style="width: 250px;">State</th>
     <th>Confirmed Indian Cases</th>
     <th>Discharged</th>
     <th>Deaths</th>
@@ -146,7 +86,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</script>
 </html>
 
 

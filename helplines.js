@@ -11,10 +11,10 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 function myFunction(myArr){
-	console.log("Hello ",myArr);
+	//console.log("Hello ",myArr);
 	var columnDefs = [
-	  {headerName: "State", field: "loc", minWidth:300},
-	  {headerName: "Number", field: "number",minWidth:300}
+	  {headerName: "State", field: "loc", minWidth:400,},
+	  {headerName: "Number", field: "number",minWidth:500}
 	];
 
 	var rowData = myArr.data.contacts.regional;
@@ -22,8 +22,9 @@ function myFunction(myArr){
 	  columnDefs: columnDefs,
 	  rowData: rowData,
 	  pagination: true,
-	  paginationPageSize: 15
-	};
+	  paginationPageSize: 15,
+};
+      gridOptions.rowHeight = 40;
 	var gridDiv = document.querySelector('#myGrid');
     new agGrid.Grid(gridDiv, gridOptions);
 }
