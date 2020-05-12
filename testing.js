@@ -18,6 +18,8 @@ function getAll2(myArr1)
   for(let i=1;i<testing_data.length;i++){
     testing_arr.push(testing_data[i].totalSamplesTested);
   }
+
+  console.log(testing_arr);
   Highcharts.chart('testing', {
     chart: {
         type: 'spline',
@@ -27,7 +29,7 @@ function getAll2(myArr1)
         }
     },
     title: {
-        text: 'Total Samples tested to date',
+        text: 'Total Samples Tested',
         align: 'left'
     },
     xAxis: {
@@ -46,7 +48,7 @@ function getAll2(myArr1)
         plotBands: []
     },
     tooltip: {
-        valueSuffix: 'cases'
+        valueSuffix: 'tests'
     },
     plotOptions: {
         spline: {
@@ -60,17 +62,17 @@ function getAll2(myArr1)
                 enabled: false
             },
             pointInterval: 7200000*12, // one hour
-            pointStart: Date.UTC(2020, 2, 18, 0, 0, 0)
+            pointStart: Date.UTC(2020, 2, 10, 0, 0, 0)
         }
     },
     series: [{
-        name: 'Total Samples Tested',
+        name: 'tests',
         data: testing_arr
-    }],
+   }],
     navigation: {
         menuItemStyle: {
             fontSize: '10px'
         }
     }
-  });
+});
 }

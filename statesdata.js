@@ -14,6 +14,13 @@ xmlhttp.send();
 var curr_states = [];
 function stateData(myArr1)
 {
+ document.getElementById("total_value").innerHTML ='<b>'+ myArr1.data.summary.total+'</b>';
+ document.getElementById("confirmedCasesIndian_value").innerHTML ='<b>'+ myArr1.data.summary.confirmedCasesIndian+'</b>';
+ document.getElementById("confirmedCasesForeign_value").innerHTML ='<b>'+ myArr1.data.summary.confirmedCasesForeign+'</b>';
+ document.getElementById("discharged_value").innerHTML ='<b>'+ myArr1.data.summary.discharged+'</b>';
+ document.getElementById("deaths_value").innerHTML ='<b>'+ myArr1.data.summary.deaths+'</b>';
+ document.getElementById("confirmedButLocationUnidentified_value").innerHTML ='<b>'+ 
+                                                        myArr1.data.summary.confirmedButLocationUnidentified+'</b>';
   var whole =  myArr1.data;
   var states = whole.regional;
   var count = 1;

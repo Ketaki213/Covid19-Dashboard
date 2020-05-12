@@ -6,6 +6,17 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         myFunction(myArr);
+        document.getElementById("refresh").innerHTML = "";
+         document.getElementById("myTable").style.visibility = 'visible';
+      document.getElementById("world").style.visibility = 'visible';
+      document.getElementById("footer").style.visibility = 'visible';
+    }
+    else
+    {
+      document.getElementById("myTable").style.visibility = 'hidden';
+      document.getElementById("world").style.visibility = 'hidden';
+      document.getElementById("footer").style.visibility = 'hidden';
+      document.getElementById("refresh").innerHTML = "Please refresh to load the data!!";
     }
 };
 xmlhttp.open("GET", url, true);
@@ -15,6 +26,12 @@ xmlhttp.send();
 function myFunction(myArr) {
 
 	var countries = myArr.Countries;
+  document.getElementById("NewConfirmed_value").innerHTML = '<b>'+myArr.Global.NewConfirmed+'</b>';
+  document.getElementById("TotalConfirmed_value").innerHTML = '<b>'+myArr.Global.TotalConfirmed+'</b>';
+  document.getElementById("NewDeaths_value").innerHTML = '<b>'+myArr.Global.NewDeaths+'</b>';
+  document.getElementById("TotalDeaths_value").innerHTML = '<b>'+myArr.Global.TotalDeaths+'</b>';
+  document.getElementById("NewRecovered_value").innerHTML = '<b>'+myArr.Global.NewRecovered+'</b>';
+  document.getElementById("TotalRecovered_value").innerHTML = '<b>'+myArr.Global.TotalRecovered+'</b>';
 	var table = document.getElementById("myTable");
   var i;
     var count = 1;

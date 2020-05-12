@@ -69,7 +69,35 @@
   <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentails</a>
 </nav>
   </header>
- <h1 style="color:#343A40; margin-left:40%;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;"><b>World Data</b></h1>
+
+ <div id="world" style="width: 100%;height: 200px;display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+   <h3 style="color:#343A40; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;margin-top: 10px;margin-left: 10px;display: inline-block;margin: auto"><b>World Data</b></h3>
+   <div id="NewConfirmed" style="width:50%;height:60%;background-color:#A9CEFD;;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>New Confirmed</b></p>
+     <p id="NewConfirmed_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
+   </div>
+   <div id="TotalConfirmed" style="width:50%;height:60%;background-color: #d4a6f7;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Total Confirmed</b></p>
+     <p id="TotalConfirmed_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
+   </div>
+   <div id="NewDeaths" style="width:50%;height:60%;;background-color: #FE908F;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>New Deaths</b></p>
+     <p id="NewDeaths_value" style="margin:auto;color:#343A40;text-align: center;margin-top:40px;vertical-align: text-bottom;"></p>
+   </div>
+   <div id="TotalDeaths" style="width:50%;height:60%;;background-color: #F6CC66;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Total Deaths</b></p>
+     <p id="TotalDeaths_value" style="margin:auto;color:#343A40;text-align: center;margin-top:40px;vertical-align: text-bottom;"></p>
+   </div>
+   <div id="NewRecovered" style="width:50%;height:60%;;background-color: #8bf0df;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>New Recovered</b></p>
+     <p id="NewRecovered_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
+   </div>
+   <div id="TotalRecovered" style="width:50%;height:60%;;background-color:#9CEA9C ;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Total Recovered</b></p>
+     <p id="TotalRecovered_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
+   </div>
+ </div>
+ <h5 id="refresh"></h5>
 <table id="myTable">
 	<tr>
     <th>Country</th>
@@ -83,7 +111,8 @@
 <footer class="footer">
     <p></p>
     <h5>Created by Ketaki Butte and Kaustubh Butte</h5>
-    <a href="https://www.linkedin.com/in/ketaki-butte-70b676128/" target="_blank"><img src="linkedin.png" alt="logo" style="width: 40px;height: 40px;margin-top:10px;" ></a>
+    <a href="https://www.linkedin.com/in/ketaki-butte-70b676128/" target="_blank"><img src="linkedin.png" alt="logo" style="width: 40px;height: 40px;margin-bottom: :10px;" ></a>
+    <a href="https://github.com/kaustubh77" target="_blank"><img src="github.png" alt="logo" style="width: 40px;height: 40px;margin-bottom: :10px;margin-left: 1%;" ></a>
   </div>
 </footer>
 </body>
