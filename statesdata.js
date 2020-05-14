@@ -25,8 +25,10 @@ function stateData(myArr1)
   var states = whole.regional;
   var count = 1;
   var table = document.getElementById("myTable");
- 
+   let statemap = new Map();
   for(i = 0; i < states.length ; i++) {
+     let d = [states[i].loc,states[i].totalConfirmed];
+    statemap.set(states[i].loc,states[i].totalConfirmed);
     var row = table.insertRow(count);
     count++;
     var cell1 = row.insertCell(0);
@@ -43,6 +45,95 @@ function stateData(myArr1)
     cell6.innerHTML = states[i].totalConfirmed;
     curr_states.push(states[i].loc);
   }
+
+  let data = [
+    ['madhya pradesh', statemap.get("Madhya Pradesh")],
+    ['uttar pradesh', statemap.get("Uttar Pradesh")],
+    ['karnataka', statemap.get("Karnataka")],
+    ['nagaland', statemap.has("Nagaland")?statemap.get("Nagaland"):0],
+    ['bihar', statemap.get("Bihar")],
+    ['lakshadweep', statemap.has("Lakshadweep")?statemap.get("Lakshadweep"):0],
+    ['andaman and nicobar', statemap.get("Andaman and Nicobar Islands")],
+    ['assam', statemap.get("Assam")],
+    ['west bengal', statemap.get("West Bengal")],
+    ['puducherry', statemap.get("Puducherry")],
+    ['daman and diu', statemap.has("Daman and Diu")?statemap.get("Daman and Diu"):0],
+    ['gujarat', statemap.get("Gujarat")],
+    ['rajasthan', statemap.get("Rajasthan")],
+    ['dadara and nagar havelli', statemap.has("Dadara and Nagar Havelli")?statemap.get("Dadara and Nagar Havelli"):0],
+    ['chhattisgarh', statemap.get("Chhattisgarh")],
+    ['tamil nadu', statemap.get("Tamil Nadu")],
+    ['chandigarh', statemap.get("Chandigarh")],
+    ['punjab', statemap.get("Punjab")],
+    ['haryana', statemap.get("Haryana")],
+    ['andhra pradesh', statemap.get("Andhra Pradesh")],
+    ['maharashtra', statemap.get("Maharashtra")],
+    ['himachal pradesh', statemap.get("Himachal Pradesh")],
+    ['meghalaya', statemap.get("Meghalaya")],
+    ['kerala', statemap.get("Kerala")],
+    ['telangana', statemap.get("Telengana")],
+    ['mizoram', statemap.get("Mizoram")],
+    ['tripura', statemap.get("Tripura")],
+    ['manipur', statemap.get("Manipur")],
+    ['arunanchal pradesh', statemap.get("Arunachal Pradesh")],
+    ['jharkhand', statemap.get("Jharkhand")],
+    ['goa', statemap.get("Goa")],
+    ['nct of delhi', statemap.get("Delhi")],
+    ['odisha', statemap.get("Odisha")],
+    ['jammu and kashmir', statemap.get("Jammu and Kashmir")],
+    ['sikkim', statemap.has("Sikkim")?statemap.get("Sikkim"):0],
+    ['uttarakhand', statemap.get("Uttarakhand")]
+];
+  console.log(data);
+  Highcharts.mapChart('map_container', {
+    chart: {
+        map: 'countries/in/custom/in-all-disputed'
+    },
+
+    title: {
+        text: 'Total cases (Statewise)'
+    },
+ plotOptions: {
+    series: {
+      point: {
+        events: {
+          click: function() {
+            console.log(this.name);
+            sessionStorage.setItem("statename", this.name);
+             window.open("district.html","_self");
+          }
+        }
+      }
+    }
+  },
+    mapNavigation: {
+        enabled: true,
+        buttonOptions: {
+            verticalAlign: 'bottom'
+        }
+    },
+
+    colorAxis: {
+        //min: 0
+        minColor: '#ffffff',
+        maxColor: '#FF404F'
+    },
+
+    series: [{
+        data: data,
+        name: 'Random data',
+        states: {
+            hover: {
+                color: 'red'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+});
+ // document.getElementByClassName("highcharts-button-box").remove();
 }
 
 document.querySelector("#myTable").addEventListener("click",event => {

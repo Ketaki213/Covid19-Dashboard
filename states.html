@@ -56,6 +56,30 @@
   text-align: center;
   overflow: auto;
 }
+#map_container {
+    height: 500px; 
+    min-width: 310px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+   cursor: pointer;
+}
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: red;
+     
+}
+.highcharts-plot-background
+{
+
+}
+.highcharts-credits {
+display: none !important;
+}
+/*.highcharts-root
+{
+  width:700px;
+}*/
 	</style>
    <link
     rel="stylesheet"
@@ -63,13 +87,13 @@
   />
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
       </script>
-      <script src = "https://code.highcharts.com/highcharts.js"></script> 
 </head>
+
 <body>
   <header>
    <nav class="navbar navbar-dark bg-dark" style="background-color:#5E9CD3; color:#5E9CD3">
   <a class="nav-link"><img src="logo.jpeg" alt="logo" style="width: 120px;height: 40px;" ></a>
-  <a class="nav-link" style="color:white; text-align:left" href="index.html">Home</a>
+  <a class="nav-link" style="color:white; text-align:left" href="index.html">World</a>
   <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
   <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
   <a class="nav-link" style="color:white; text-align:left" href="updates.html">Guidelines</a>
@@ -104,7 +128,9 @@
      <p id="confirmedButLocationUnidentified_value" style="margin:auto;color:#343A40;text-align: center;margin-top:5px;vertical-align: text-bottom;"></p>
    </div>
  </div>
+ <a href="#awareness_1" ><button type="button" class="btn btn-primary" style="margin-left: 25%" id="guidelines">Check Government guidelines</button></a>
 <h5 id="total"></h5>
+<div id="table_map" style="display: grid;grid-template-columns: 2fr 1fr;">
   <div>
 	<table id="myTable" >
 	<tr>
@@ -117,6 +143,17 @@
   </tr>
 </table>
 </div>
+<div id="map_container" style="margin-top: 0px;"></div>
+</div>
+<div id="awareness_1" style="display: grid;grid-template-columns: 1fr 1fr 1fr;margin-top: 1%;margin-left: 3%;">
+   <a href="https://www.mohfw.gov.in/pdf/FINAL_14_03_2020_ENg.pdf" target="_blank"><img src="awareness_image_1.png" alt="logo" style="width: 90%;height: 100%;" ></a>
+   <a href="https://www.mohfw.gov.in/pdf/PostrerEnglishtraveller.pdf" target="_blank"><img src="awareness_image_4.png" alt="logo" style="width: 90%;height: 100%;"></a>
+    <a href="https://www.mohfw.gov.in/pdf/Poster_Corona_ad_Eng.pdf" target="_blank"><img src="awareness_image_3.png" alt="logo" style="width: 90%;height: 100%;" ></a>
+</div>
+<div id="awareness_2" style="display: grid;grid-template-columns: 1fr 1fr 1fr;margin-top: 1%;margin-left: 3%;">
+  <a href="https://www.mohfw.gov.in/pdf/ProtectivemeasuresEng.pdf" target="_blank"><img src="awareness_image_5.png" alt="logo" style="width: 90%;height: 100%;" ></a>
+   <a href="https://www.mohfw.gov.in/pdf/socialdistancingEnglish.pdf" target="_blank"><img src="awareness_image_6.png" alt="logo" style="width: 90%;height: 100%;"></a>
+</div>
 <footer class="footer">
     <p></p>
     <h5>Created by Ketaki Butte and Kaustubh Butte</h5>
@@ -124,12 +161,14 @@
     <a href="https://github.com/kaustubh77" target="_blank"><img src="github.png" alt="logo" style="width: 40px;height: 40px;margin-bottom: :10px;margin-left: 1%;" ></a>
   </div>
 </footer>
+
 </body>
-<script type="text/javascript" src="statesdata.js"></script>
-<script type="text/javascript"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.js"></script>
+<script type="text/javascript" src="statesdata.js"></script>
 </html>
-
-
