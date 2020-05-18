@@ -2,12 +2,43 @@
 <html>
 <head>
 	<title></title>
-	<style type="text/css">
-
+	<style>
+#myTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: auto;
+  margin-top: 1%;
+}
+#myTable td, #myTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#myTable tr:nth-child(even){background-color: #f2f2f2;}
+#myTable tr:hover {background-color: #ddd;}
+#myTable th {
+	border: 1px solid #ddd;
+  padding-top: 30px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5E9CD3;
+  color: white;
+}
+.footer{
+  /*position: absolute;*/
+  background:#343A40;
+  padding: 1% 1%;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  color: #ffffff;
+  text-align: center;
+  /*overflow: auto;*/
+}
 .navigation ul {
   list-style: none;
   margin: 0 auto;
-  padding: 0;
+    padding: 0;
 }
 
 .navigation li{
@@ -23,130 +54,64 @@
   color: #000000;
 }
 
-#myTable {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 60%;
-  cursor: pointer;
-  margin: auto;
-  margin-top: 1%;
-}
-#myTable td, #myTable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-#myTable tr:nth-child(even){background-color: #f2f2f2;}
-#myTable tr:hover {background-color: #ddd;}
-#myTable th {
-	border: 1px solid #ddd;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #5E9CD3;
-  color: white;
-}
-.footer{
-  /*position: fixed;*/
-  background:#343A40;
-  padding: 1% 1%;
-  bottom: 0;
-  width: 100%;
-  height: 15%;
-  color: #ffffff;
-  text-align: center;
-  overflow: auto;
-}
-#map_container {
-    height: 500px; 
-    min-width: 310px; 
-    max-width: 800px; 
-    margin: 0 auto; 
-   cursor: pointer;
-}
-.loading {
-    margin-top: 10em;
-    text-align: center;
-    color: red;
-     
-}
-.highcharts-plot-background
-{
-
-}
-.highcharts-credits {
-display: none !important;
-}
-/*.highcharts-root
-{
-  width:700px;
-}*/
-	</style>
-   <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-  />
-	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
-      </script>
+</style>
 </head>
-
 <body>
+ 
   <header>
-   <nav class="navbar navbar-dark bg-dark" style="background-color:#5E9CD3; color:#5E9CD3">
+   <nav  class="navbar navbar-dark bg-dark">
   <a class="nav-link"><img src="logo.jpeg" alt="logo" style="width: 120px;height: 40px;" ></a>
-  <a class="nav-link" style="color:white; text-align:left" href="index.html">World</a>
+  <a class="nav-link" style="color:white; text-align:left" href="index.html">Home</a>
   <a class="nav-link" style="color:white; text-align:left" href="graphs.html">Analysis</a>
   <a class="nav-link" style="color:white; text-align:left" href="helpline.html">Helpline numbers</a>
   <a class="nav-link" style="color:white; text-align:left" href="updates.html">Guidelines</a>
-  <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentials</a>
+  <a class="nav-link" style="color:white; text-align:left" href="essentials.html">Essentails</a>
 </nav>
   </header>
-   <div id="world" style="width: 100%;height: 200px;display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;">
-   <h3 style="color:#343A40; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;margin-top: 10px;margin-left: 10px;display: inline-block;margin: auto"><b>State Data</b></h3>
-   <div id="total" style="width:65%;height:60%;background-color:#A9CEFD;;margin: auto;border-radius: 10%;">
-     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Total</b></p>
-     <p id="total_value" style="margin:auto;color:#343A40;text-align: center;margin-top:40px;vertical-align: text-bottom;"></p>
+
+ <div id="world" style="width: 100%;height: 200px;display: grid;grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;">
+   <h3 style="color:#343A40; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;margin-top: 10px;margin-left: 10px;display: inline-block;margin: auto"><b>World Data</b></h3>
+   <div id="NewConfirmed" style="width:65%;height:60%;background-color:#A9CEFD;;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>New Confirmed</b></p>
+     <p id="NewConfirmed_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
    </div>
-   <div id="confirmedCasesIndian" style="width:65%;height:60%;background-color: #F6CC66; ;margin: auto;border-radius: 10%;">
-     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Confirmed Cases Indian</b></p>
-     <p id="confirmedCasesIndian_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
+   <div id="TotalConfirmed" style="width:65%;height:60%;background-color: #d4a6f7;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Total Confirmed</b></p>
+     <p id="TotalConfirmed_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
    </div>
-   <div id="confirmedCasesForeign" style="width:65%;height:60%;;background-color: #FE908F;margin: auto;border-radius: 10%;">
-     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Confirmed Cases Foreign</b></p>
-     <p id="confirmedCasesForeign_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
+   <div id="NewDeaths" style="width:65%;height:60%;;background-color: #FE908F;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>New Deaths</b></p>
+     <p id="NewDeaths_value" style="margin:auto;color:#343A40;text-align: center;margin-top:40px;vertical-align: text-bottom;"></p>
    </div>
-   <div id="discharged" style="width:65%;height:60%;;background-color:#9CEA9C;margin: auto;border-radius: 10%;">
-     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Discharged</b></p>
-     <p id="discharged_value" style="margin:auto;color:#343A40;text-align: center;margin-top:40px;vertical-align: text-bottom;"></p>
+   <div id="TotalDeaths" style="width:65%;height:60%;;background-color: #F6CC66;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Total Deaths</b></p>
+     <p id="TotalDeaths_value" style="margin:auto;color:#343A40;text-align: center;margin-top:40px;vertical-align: text-bottom;"></p>
    </div>
-   <div id="deaths" style="width:65%;height:60%;;background-color: #d4a6f7;margin: auto;border-radius: 10%;">
-     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Deaths</b></p>
-     <p id="deaths_value" style="margin:auto;color:#343A40;text-align: center;margin-top:40px;vertical-align: text-bottom;"></p>
+   <div id="NewRecovered" style="width:65%;height:60%;;background-color: #8bf0df;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>New Recovered</b></p>
+     <p id="NewRecovered_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
    </div>
-   <div id="confirmedButLocationUnidentified" style="width:65%;height:60%;;background-color: #8bf0df;margin: auto;border-radius: 10%;">
-     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Confirmed But Location Unidentified
-     </b></p>
-     <p id="confirmedButLocationUnidentified_value" style="margin:auto;color:#343A40;text-align: center;margin-top:5px;vertical-align: text-bottom;"></p>
+   <div id="TotalRecovered" style="width:65%;height:60%;;background-color:#9CEA9C ;margin: auto;border-radius: 10%;">
+     <p style="margin:auto;color:#343A40;text-align: center;vertical-align: text-bottom;"><b>Total Recovered</b></p>
+     <p id="TotalRecovered_value" style="margin:auto;color:#343A40;text-align: center;margin-top:20px;vertical-align: text-bottom;"></p>
    </div>
  </div>
- <a href="#awareness_1" ><button type="button" class="btn btn-primary" style="margin-left: 25%" id="guidelines">Check Government guidelines</button></a>
-<h5 id="total"></h5>
-<div id="table_map" style="display: grid;grid-template-columns: 2fr 1fr;">
-  <div>
-	<table id="myTable" >
+ <h5 id="refresh"></h5>
+  <a href="#awareness_1" ><button type="button" class="btn btn-primary" style="margin-left: 40%" id="guidelines">Check Government guidelines</button></a>
+ 
+<table id="myTable">
 	<tr>
-    <th style="width: 250px;">State</th>
-    <th>Confirmed Indian Cases</th>
-    <th>Discharged</th>
-    <th>Deaths</th>
-    <th>Confirmed Foreign Cases</th>
+    <th>Country</th>
     <th>Total Confirmed</th>
+    <th>New Deaths</th>
+    <th>Total Deaths</th>
+    <th>New Recovered</th>
+    <th>Total Recovered</th>
   </tr>
 </table>
-</div>
-<div id="map_container" style="margin-top: 0px;"></div>
-</div>
 <div id="awareness_1" style="display: grid;grid-template-columns: 1fr 1fr 1fr;margin-top: 1%;margin-left: 3%;">
    <a href="https://www.mohfw.gov.in/pdf/FINAL_14_03_2020_ENg.pdf" target="_blank"><img src="awareness_image_1.png" alt="logo" style="width: 90%;height: 100%;" ></a>
+
    <a href="https://www.mohfw.gov.in/pdf/PostrerEnglishtraveller.pdf" target="_blank"><img src="awareness_image_4.png" alt="logo" style="width: 90%;height: 100%;"></a>
     <a href="https://www.mohfw.gov.in/pdf/Poster_Corona_ad_Eng.pdf" target="_blank"><img src="awareness_image_3.png" alt="logo" style="width: 90%;height: 100%;" ></a>
 </div>
@@ -161,14 +126,9 @@ display: none !important;
     <a href="https://github.com/kaustubh77" target="_blank"><img src="github.png" alt="logo" style="width: 40px;height: 40px;margin-bottom: :10px;margin-left: 1%;" ></a>
   </div>
 </footer>
-
 </body>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="https://code.highcharts.com/maps/highmaps.js"></script>
-<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/mapdata/countries/in/custom/in-all-disputed.js"></script>
-<script type="text/javascript" src="statesdata.js"></script>
+<script type="text/javascript" src="mainjs.js"></script>
 </html>
