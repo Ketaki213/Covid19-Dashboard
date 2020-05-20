@@ -133,7 +133,6 @@ function stateData(myArr1)
         }
     }]
 });
- // document.getElementByClassName("highcharts-button-box").remove();
 }
 
 document.querySelector("#myTable").addEventListener("click",event => {
