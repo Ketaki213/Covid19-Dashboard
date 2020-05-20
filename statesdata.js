@@ -121,7 +121,7 @@ function stateData(myArr1)
 
     series: [{
         data: data,
-        name: 'Random data',
+        name: 'Total Cases',
         states: {
             hover: {
                 color: 'red'
